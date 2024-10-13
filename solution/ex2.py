@@ -16,15 +16,17 @@ def f():
     
     # swap num1 and num2 if num1>num2
     if num1 > num2 :
-        temp = num1
-        num1 = num2
-        num2 = temp
+        step = -1
+        end_num = num2 - 1
+    else:
+        step = 1
+        end_num = num2 + 1
     
     
     # num_of_printed_number_in_this_row
     num_in_row = 0
     
-    for i in range(num1, num2 + 1):
+    for i in range(num1, end_num, step):
         print(i, end="") 
         num_in_row = num_in_row + 1
 
@@ -42,7 +44,7 @@ def f():
     else:
         remaining = num3 - num_in_row
         if remaining == 1:
-            print("1 numbers are needed.")
+            print("1 number is needed.")
         else:
             print(remaining, "numbers are needed.")
 
